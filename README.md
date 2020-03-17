@@ -1,0 +1,1 @@
+## Adds users to multiple slack channels at once
