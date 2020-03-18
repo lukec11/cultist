@@ -54,4 +54,6 @@ def on_message(**payload):
 
 
 rtm_client = slack.RTMClient(token=slackToken)
+
+print('Bot has started!')
 rtm_client.start()
