@@ -8,5 +8,5 @@ multidict==4.7.6
 pkg-resources==0.0.0
 pycodestyle==2.6.0
 slack==0.0.2
-slackclient==2.6.0
+slackclient==2.6.1
 yarl==1.4.2
