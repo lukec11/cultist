@@ -8,7 +8,6 @@ slackToken = config['slackToken']
 legacyToken = config['legacyToken']
 approvedChannel = config['approvedChannel']
 triggerWord = config['triggerWord']
-cults = config['channelList']
 
 
 cults = json.load('cults.json')
