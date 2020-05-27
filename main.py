@@ -1,14 +1,17 @@
 import slack
 import json
+import os
 
-# Open stuff from config file
-with open('config.json') as f:
-    config = json.load(f)
-    slackToken = config['slackToken']
-    legacyToken = config['legacyToken']
-    approvedChannel = config['approvedChannel']
-    triggerWord = config['triggerWord']
-    cults = config['channelList']
+
+config = os.environ
+slackToken = config['slackToken']
+legacyToken = config['legacyToken']
+approvedChannel = config['approvedChannel']
+triggerWord = config['triggerWord']
+cults = config['channelList']
+
+
+cults = json.load('cults.json')
 
 # Initialize slack as a web client
 slack_client = slack.WebClient(token=legacyToken)
