@@ -9,8 +9,8 @@ legacyToken = config['legacyToken']
 approvedChannel = config['approvedChannel']
 triggerWord = config['triggerWord']
 
-
-cults = json.load('cults.json')
+with open('cults.json') as f:
+    cults = json.load(f)
 
 # Initialize slack as a web client
 slack_client = slack.WebClient(token=legacyToken)
