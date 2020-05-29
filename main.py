@@ -1,6 +1,7 @@
 import slack
 import json
 import os
+import re
 
 
 config = os.environ
@@ -42,8 +43,7 @@ def on_message(**payload):
 
     try:
         if message.startswith('!add') and channel == approvedChannel:
-            user = (message[len(triggerWord)+1: len(message)]
-                    ).replace('<', '').replace('@', '').replace('>', '')  # Strips unnecessary characters from UID
+            user = re.search(fr'!add <@([A-Za-z0-9]*)>').group(1) #Uses regex to parse out UID
 
             addToChannel(user)
             slackReaction(legacyToken, channel, ts)
