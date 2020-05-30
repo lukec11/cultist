@@ -43,7 +43,7 @@ def on_message(**payload):
 
     try:
         if message.startswith('!add') and channel == approvedChannel:
-            user = re.search(fr'!add <@([A-Za-z0-9]*)>').group(1) #Uses regex to parse out UID
+            user = re.search(fr'!add <@([A-Za-z0-9]*)>', message).group(1) #Uses regex to parse out UID
 
             addToChannel(user)
             slackReaction(legacyToken, channel, ts)
